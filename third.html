@@ -1,0 +1,213 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="Images/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Shia Salaah صَلاة شيعة</title>
+
+</head>
+<body>
+    <main>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="customNav">
+            <a class="navbar-brand" href="index.html">Shia Salaah صَلاة شيعة</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+              </ul>
+                <a href="resources.html">
+                    <button class="btn btn-outline-success my-2 my-sm-0" id="btn4" type="submit">Salaah Resources</button>
+                </a>
+            </div>
+          </nav>
+        <div class="headingDiv">
+            <h2>Rakah: <span id="h2-inn">1</span>/3</h2>
+        </div>
+        <div class="image">
+            <img src="./Images/takbir_edited.png" id="namaz_img">
+        </div>
+        <div class="headingDiv">
+            <h2 id="action">Takbir تکبیر۔</h2>
+        </div>
+        <div class="audio-div">
+            <audio controls autoplay style="width: 50%;" id="audio">
+                <source src="./Audio/Takbiratul_Ihraam.m4a" type="audio/mp3">
+            </audio>
+        </div>
+    </main>
+    <script>
+    let audio = document.getElementById("audio");
+    let namaz_img = document.getElementById("namaz_img");
+    let rakat = document.getElementById("h2-inn");
+    let action = document.getElementById("action");
+    let index = 0;
+    let arr = ['./Audio/Qiyaam_1st_rakaah.m4a',
+                './Audio/Ruku.m4a',
+                './Audio/SamiAllah_takbir.m4a',
+                './Audio/Sujood.m4a',
+                './Audio/Takbir_astagh_takbir.m4a',
+                './Audio/Sujood.m4a',
+                './Audio/Takbir.m4a',
+                './Audio/Bihawlillah.m4a',
+                './Audio/Qiyaam_2nd_rakaah.m4a',
+                './Audio/Qunut.m4a',
+                './Audio/Ruku.m4a',
+                './Audio/SamiAllah_takbir.m4a',
+                './Audio/Sujood.m4a',
+                './Audio/Takbir_astagh_takbir.m4a',
+                './Audio/Sujood.m4a',
+                './Audio/Tashahud.m4a',
+                './Audio/Bihawlillah.m4a',
+                './Audio/Tasbihaat_arba.m4a',
+                './Audio/Ruku.m4a',
+                './Audio/SamiAllah_takbir.m4a',
+                './Audio/Sujood.m4a',
+                './Audio/Takbir_astagh_takbir.m4a',
+                './Audio/Sujood.m4a',
+                './Audio/Tashahud.m4a',
+                './Audio/Salaam.m4a'
+            ];
+    audio.onended = function(){
+        if (index<arr.length)
+        {
+            audio.src = arr[index];
+            console.log(audio.src);
+            audio.play();
+            index++;
+            if (index==1){
+                action.innerHTML = "Qiyaam‎ قيام"
+                namaz_img.src="./Images/stand_edited.png";
+            }
+            else if (index==2){
+                action.innerHTML = "Rukoo رُكوع";
+                namaz_img.src="./Images/rako_edited.png";
+            }
+            else if(index==3){
+                action.innerHTML = "Qaumah قؤما";
+                namaz_img.src="./Images/stand_edited.png"
+            }
+            else if(index==4)
+            {
+                action.innerHTML = "Sajdah‎ سجدة";
+                namaz_img.src="./Images/sajod_edited.png";
+            }
+            else if(index==5)
+            {
+                action.innerHTML = "Jalsa جلسة";
+                namaz_img.src="./Images/jalsa_edited.png";
+            }
+            else if(index==6)
+            {
+                action.innerHTML = "Sajdah‎ سجدة";
+                namaz_img.src="./Images/sajod_edited.png";
+            }
+            else if(index==7)
+            {
+                action.innerHTML = "Jalsa جلسة";
+                namaz_img.src="./Images/jalsa_edited.png";
+            }
+            else if(index==8)
+            {
+                action.innerHTML = "Qaumah قؤما";
+                namaz_img.src="./Images/stand_edited.png";
+            }
+            else if(index==9)
+            {
+                action.innerHTML = "Qiyaam‎ قيام";
+                rakat.innerHTML="2";
+                namaz_img.src="./Images/stand_edited.png";
+
+            }
+            else if(index==10)
+            {
+                action.innerHTML = "Dua دعا";
+                namaz_img.src="./Images/dua_edited.png";
+            }
+            else if(index==11)
+            {
+                action.innerHTML = "Rukoo رُكوع";
+                namaz_img.src="./Images/rako_edited.png";
+            }
+            else if(index==12)
+            {
+                action.innerHTML = "Qaumah قؤما";
+                namaz_img.src="./Images/stand_edited.png";
+            }
+            else if(index==13)
+            {
+                action.innerHTML = "Sajdah‎ سجدة";
+                namaz_img.src="./Images/sajod_edited.png";
+            }
+            else if(index==14)
+            {
+                action.innerHTML = "Jalsa جلسة";
+                namaz_img.src="./Images/jalsa_edited.png";
+            }
+            else if(index==15)
+            {
+                action.innerHTML = "Sajdah‎ سجدة";
+                namaz_img.src="./Images/sajod_edited.png";
+            }
+            else if(index==16)
+            {
+                action.innerHTML = "Jalsa جلسة";
+                namaz_img.src="./Images/jalsa_edited.png";
+            }
+            else if(index==17)
+            {
+                action.innerHTML = "Qaumah قؤما";
+                namaz_img.src="./Images/stand_edited.png";
+            }
+            else if(index==18)
+            {
+                action.innerHTML = "Qiyaam‎ قيام";
+                rakat.innerHTML="3";
+                namaz_img.src="./Images/stand_edited.png";
+
+            }
+            else if (index==19){
+                action.innerHTML = "Rukoo رُكوع";
+                namaz_img.src="./Images/rako_edited.png";
+            }
+            else if(index==20){
+                action.innerHTML = "Qaumah قؤما";
+                namaz_img.src="./Images/stand_edited.png"
+            }
+            else if(index==21)
+            {
+                action.innerHTML = "Sajdah‎ سجدة";
+                namaz_img.src="./Images/sajod_edited.png";
+            }
+            else if(index==22)
+            {
+                action.innerHTML = "Jalsa جلسة";
+                namaz_img.src="./Images/jalsa_edited.png";
+            }
+            else if(index==23)
+            {
+                action.innerHTML = "Sajdah‎ سجدة";
+                namaz_img.src="./Images/sajod_edited.png";
+            }
+            else if(index==24)
+            {
+                action.innerHTML = "Jalsa جلسة";
+                namaz_img.src="./Images/jalsa_edited.png";
+            }
+        }
+    }
+</script>
+<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
